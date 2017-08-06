@@ -1,11 +1,9 @@
-package com.uzabase.rss;
+package com.uzabase.schema;
 
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import com.uzabase.schema.Feed;
 
 @XmlRootElement(name="rss")
 public class Rss {

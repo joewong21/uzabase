@@ -8,6 +8,7 @@ import javax.xml.bind.Marshaller;
 
 import com.uzabase.logger.Logger;
 import com.uzabase.logger.RssFeederLogger;
+import com.uzabase.schema.Rss;
 
 public class UzabaseFeeder {
 
