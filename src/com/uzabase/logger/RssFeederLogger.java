@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class RssFeederLogger {
 	 
-	public static Logger getChainOfLoggers(String loggerName){
+	public static Logger getLogger(String loggerName){
 		
 		try{
 		  Logger infoLogger = new InfoLogger(Logger.INFO);

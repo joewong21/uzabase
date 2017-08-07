@@ -12,7 +12,7 @@ import com.uzabase.schema.Rss;
 
 public class UzabaseFeeder {
 
-	static Logger logger = RssFeederLogger.getChainOfLoggers("rss");
+	static Logger logger = RssFeederLogger.getLogger("rss");
 	private final static String[] EXCLUDED_KEYWORDS_REGEX = {"(?i)NewsPicks"};
 	private final static String  RSS_URL = "http://tech.uzabase.com/rss";
 
@@ -24,12 +24,11 @@ public class UzabaseFeeder {
            Rss rss = new RssFetcher<Rss>(RSS_URL, EXCLUDED_KEYWORDS_REGEX, Rss.class).fetchFeed();
            String rsstext = feeder.convertFeedtoText(rss);
            logger.handleMessage(Logger.FILE,rsstext);
-        } catch(UnknownHostException connEx){
+        }catch(UnknownHostException connEx){
         	logger.handleMessage(Logger.DEBUG,"Unable to reach host : " + RSS_URL);
         }catch(JAXBException jaxbEx){        	
         	logger.handleMessage(Logger.DEBUG,"xml feed object conversion error.");
-        }		
-		catch (Exception e) {
+        }catch (Exception e) {
             logger.handleMessage(Logger.DEBUG, e.getMessage());
         }
 	}

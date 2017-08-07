@@ -26,7 +26,6 @@ public class  RssFetcher<T> {
 	private final String[] excludeKeywords;
 	private final Class<T> clazz;
 	
-	
 	public RssFetcher(String pUrl, String[] pExcludeKeywords, Class<T> pClazz){
 		rssUrl = pUrl;
 		excludeKeywords = pExcludeKeywords;
