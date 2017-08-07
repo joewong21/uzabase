@@ -23,8 +23,9 @@ public class FileLogger extends Logger{
 			String fileName = generateFileName(loggerName);
 			File logFile = new File(fileName);
 			FileWriter logwriter = new FileWriter(logFile,true);
-			BufferedWriter writer = new BufferedWriter(logwriter);  
+			BufferedWriter writer = new BufferedWriter(logwriter); 
 			writer.write(message);
+			writer.flush();
 			System.out.println("[Logged to file : " + fileName +"]");
 		} catch (IOException e) {
 			System.err.println("Failed to log the file.");
