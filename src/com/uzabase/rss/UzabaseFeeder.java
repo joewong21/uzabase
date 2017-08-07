@@ -23,6 +23,7 @@ public class UzabaseFeeder {
 		   UzabaseFeeder  feeder = new UzabaseFeeder();	
            Rss rss = new RssFetcher<Rss>(RSS_URL, EXCLUDED_KEYWORDS_REGEX, Rss.class).fetchFeed();
            String rsstext = feeder.convertFeedtoText(rss);
+           logger.handleMessage(Logger.INFO,rsstext);
            logger.handleMessage(Logger.FILE,rsstext);
         }catch(UnknownHostException connEx){
         	logger.handleMessage(Logger.DEBUG,"Unable to reach host : " + RSS_URL);
